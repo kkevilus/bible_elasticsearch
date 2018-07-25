@@ -1,0 +1,28 @@
+{
+    "vs": {
+        "properties": {
+            "bk": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "chpt": {
+                "type": "long"
+            },
+            "text": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "vs": {
+                "type": "long"
+            }
+        }
+    }
+}
