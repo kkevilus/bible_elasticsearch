@@ -12,34 +12,35 @@ curl -X PUT \
   http://localhost:9200/bible/ \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
-  -d '{
-            "vs": {
-                "properties": {
-                    "bk": {
-                        "type": "text",
-                        "fields": {
-                            "keyword": {
-                                "type": "keyword"
-                            }
-                        }
-                    },
-                    "chpt": {
-                        "type": "long"
-                    },
-                    "text": {
-                        "type": "text",
-                        "fields": {
-                            "keyword": {
-                                "type": "keyword"
-                            }
-                        }
-                    },
-                    "vs": {
-                        "type": "long"
+  -d '{"mappings":{
+    "vs": {
+        "properties": {
+            "bk": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
                     }
                 }
+            },
+            "chpt": {
+                "type": "long"
+            },
+            "text": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "vs": {
+                "type": "long"
             }
-        }'
+        }
+    }
+}
+}'
 
 
 Populating the data:
