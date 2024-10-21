@@ -9,39 +9,9 @@ Step 1 - Create the index with mapping:
              "text" (text of the verse)
 
 
-curl -X PUT \
-  http://localhost:9200/bible/ \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{"mappings":{
-    "vs": {
-        "properties": {
-            "bk": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "chpt": {
-                "type": "long"
-            },
-            "text": {
-                "type": "text",
-                "fields": {
-                    "keyword": {
-                        "type": "keyword"
-                    }
-                }
-            },
-            "vs": {
-                "type": "long"
-            }
-        }
-    }
-}
-}'
+curl --location --request PUT 'localhost:9200/bible' \
+--header 'Content-Type: application/json' \
+--data '{"mappings": { "properties": { "bk": { "type": "text", "fields": { "keyword": { "type": "keyword" } } }, "chpt": { "type": "long" }, "text": { "type": "text", "fields": { "keyword": { "type": "keyword" } } }, "vs": { "type": "long" } } } } '
 
 
 Populating the data:
